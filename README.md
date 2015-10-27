@@ -4,7 +4,9 @@ Collections is ultimately designed to allow users to manage a custom domain inde
 As of right now, the system relies on a core CSV file (Collections.csv) to hold Collections data. This may pose a problem with very large Collections; therefore everything is bound to be rewritten.
 
 The current columns are: "URL", "Genre", and "Description".
-I plan to add much farther functionality in the future. Right now, Collections really doesn't do much. Here are some of the ideas I have had so far:
+I plan to add much farther functionality in the future. Right now, Collections really doesn't do much.
+
+# TODO
 
 - Master Collection
 - Add "popularity" column or ranking column
@@ -14,4 +16,9 @@ I plan to add much farther functionality in the future. Right now, Collections r
 - User ability to add/delete columns (URL, Genre, Description, etc.)
 - Import using API (import from massive lists like Alexa; the URL and Description is already there for you, and already ranked)
 
-Feel free to commit some ideas if you want :)
+# Status
+
+I am currently working on implementing sorting functionality.
+
+
+Feel free to commit some ideas if you want :-)
