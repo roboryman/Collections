@@ -14,7 +14,7 @@ def addCollection():
     collectionGenre = raw_input('Enter the Genre for the new Collection: ')
     collectionDescription = raw_input('Enter the new Collection description: ')
     print "Appending to Collections..."
-    writer = csv.writer(f)
+    writer = csv.writer(f, delimiter='~')
     writer.writerow((collectionURL, collectionGenre, collectionDescription))
     print "Completed."
     continueOrNot()
