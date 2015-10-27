@@ -2,8 +2,6 @@ import csv
 import sys
 
 # Collections: Add collection to Collections CSV db.
-__author__ = 'Merrick Ryman'
-# TODO: add remove/edit functionality
 
 print "Use this script to append a collection."
 print "Run 'Tables.py' to view Collections data in a readable format.\n"
