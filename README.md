@@ -10,8 +10,8 @@ I plan to add much farther functionality in the future. Right now, Collections r
 
 - Master Collection
 - Add "popularity" column or ranking column
-- Sorting options (sort by URL, Genre, Description alphabetically, etc.)
-- ~~Filtering options~~
+- ~~Sorting options (sort by URL, Genre, Description alphabetically, etc.)~~
+- Filtering options
 - Use custom ascii tables(really no need for this, the PrettyTables library is fine for this it seems)
 - User ability to add/delete columns (URL, Genre, Description, etc.)
 - Import using API (import from massive lists like Alexa; the URL and Description is already there for you, and already ranked)
