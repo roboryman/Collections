@@ -15,10 +15,11 @@ I plan to add much farther functionality in the future. Right now, Collections r
 - Use custom ascii tables(really no need for this, the PrettyTables library is fine for this it seems)
 - User ability to add/delete columns (URL, Genre, Description, etc.)
 - Import using API (import from massive lists like Alexa; the URL and Description is already there for you, and already ranked)
+- Delete Collection(s)
 
 # Status
 
-I am currently working on implementing sorting functionality.
+I am currently working on implementing Deleting functionality.
 
 
 Feel free to commit some ideas if you want :-)
