@@ -14,7 +14,6 @@ I just started this project. Forgive me for only having a few files w/ a few lin
 - [ ] Use custom ascii tables(really no need for this, the PrettyTables library is fine for this it seems)
 - [ ] User ability to add/delete columns (URL, Genre, Description, etc.)
 - [ ] Import from ranked lists (ex. Alexa)
-- 
 - [ ] Delete Collection(s)
 
 # Status
