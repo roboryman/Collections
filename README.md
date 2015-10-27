@@ -7,9 +7,11 @@ The current columns are: "URL", "Genre", and "Description".
 I plan to add much farther functionality in the future. Right now, Collections really doesn't do much. Here are some of the ideas I have had so far:
 
 - Master Collection
+- Add "popularity" column or ranking column
 - Sorting options (sort by URL, Genre, Description alphabetically, etc.)
 - Filtering options
 - Use custom ascii tables(really no need for this, the PrettyTables library is fine for this it seems)
 - User ability to add/delete columns (URL, Genre, Description, etc.)
+- Import using API (import from massive lists like Alexa; the URL and Description is already there for you, and already ranked)
 
 Feel free to commit some ideas if you want :)
