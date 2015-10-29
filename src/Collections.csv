@@ -1,2 +1,3 @@
-URL~Genre~Description
-www.google.com~Search Engine~The world's largest search engine and, possibly, the largest consumer-level tech company.
+URL Genre	Description	Ranking
+www.github.com	Programming Git	Largest Git repo hosting service on the interwebs.	N/A
+www.google.com	Search Engine	By far the largest search engine on the interwebs.	1
