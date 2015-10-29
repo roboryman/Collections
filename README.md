@@ -13,7 +13,7 @@ As of right now, the system relies on a core CSV file (Collections.csv) to hold 
 - [ ] User ability to add/delete columns (URL, Genre, Description, etc.)
 - [ ] Import from ranked lists (ex. Alexa)
 - [x] Delete Collection(s)
-- [ ] Implement safeguard to prevent multiple entries of the same URL/ranking
+- [x] Implement safeguard to prevent multiple entries of the same URL/ranking
 - [x] Do not accept entries with an empty URL (re-ask?)
 - [ ] Domain checker: checks if a domain is active using URL data from Collections (optional, user can turn on/off)
 
