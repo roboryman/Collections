@@ -48,6 +48,7 @@ def removeCollection():
 
 
 def addCollection():
+    global collectionURL
     collectionURL = raw_input('Enter the URL for the new Collection: ')
     collectionGenre = raw_input('Enter the Genre for the new Collection: ')
     collectionDescription = raw_input('Enter the new Collection description: ')
@@ -67,11 +68,15 @@ def addCollection():
 
 
 def questionMark(collectionVariable):
-    if not collectionVariable:
-        collectionVariable = 'N/A'
-        return collectionVariable
+    if not collectionURL:
+        print "You must enter a URL.\n"
+        addCollection()
     else:
-        return collectionVariable
+        if not collectionVariable:
+            collectionVariable = 'N/A'
+            return collectionVariable
+        else:
+            return collectionVariable
 
 
 def continueOrNot():
