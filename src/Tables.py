@@ -20,32 +20,41 @@ def displayUnsorted():
 
 
 def displaySorted():
-  print "1. Sort by URL"
+  print "1. Sort by URL (default)"
   print "2. Sort by Genre"
   print "3. Sort by Description"
+  print "4. Sort by Ranking"
   sortBy = raw_input("Select what you would like to sort by.")
   if sortBy == "1":
+    print "Sorting by URL... This may take awhile."
     print collectionsTable.get_string(sortby='URL')
   elif sortBy == "2":
+    print "Sorting by Genre... This may take awhile."
     print collectionsTable.get_string(sortby='Genre')
   elif sortBy == "3":
+    print "Sorting by Description... This may take awhile."
     print collectionsTable.get_string(sortby='Description')
+  elif sortBy == "4":
+    print "Sorting by Ranking... This may take awhile."
+    print collectionsTable.get_string(sortby='Ranking')
   else:
-    print "Invalid input detected. Sorting by URL..."
+    print "Invalid input detected. Sorting by URL... This may take awhile."
     print collectionsTable.get_string(sortby='URL')
+
   collectionsData.close()
   x = raw_input("Press enter to exit.")
   sys.exit("Completed.")
 
 
-sortQ = raw_input("Would you like to sort? (Yy/Nn)")
+sortQ = raw_input("Would you like to sort? (Y:y/N:n)")
+
 
 if sortQ == "Y" or sortQ == "y":
   displaySorted()
 elif sortQ == "N" or sortQ == "n":
-  print "Displaying unsorted Collection... This may take awhile.\n"
+  print "Displaying unsorted Collection (Original Order Sorting)...\n"
   displayUnsorted()
 else:
   print "I'll take that as a no."
-  print "Displaying unsorted Collection... This may take awhile.\n"
+  print "Displaying unsorted Collection (Original Order Sorting)...\n"
   displayUnsorted()
