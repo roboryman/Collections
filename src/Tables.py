@@ -6,7 +6,7 @@ from prettytable import from_csv
 
 # TODO: Add filter functionality (ex. filter search engines with genre: google facebook duckduckgo -> google duckduckgo)
 
-print "Run 'addCollection.py' to append Collection(s) to the Collections CSV file.\n"
+print "Run 'manageCollection.py' to append/remove Collection(s).\n"
 
 collectionsData = open("Collections.csv", "r")
 collectionsTable = from_csv(collectionsData)
