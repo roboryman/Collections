@@ -1,29 +1,83 @@
 import csv
 import sys
+import os
 
-# Collections: Add collection to Collections CSV db.
+# Collections: Add/remove collections to Collections CSV
 
-print "Use this script to append a collection."
-print "Run 'Tables.py' to view Collections data in a readable format.\n"
+print "Use this script to append/remove collection(s)."
+print "Run 'Tables.py' to view Collections in an easily readable format.\n"
 
-f = open("Collections.csv", 'ab')
+
+def removeCollection():
+    remCollectionsIn = open('Collections.csv', 'rb')
+    remCollectionsOut = open('Collections-temp.csv', 'wb')
+    located = False
+    deleteCollection = raw_input('Enter the URL of the collection you wish to remove: ')
+    if deleteCollection == 'URL':
+        print "Stop trying to break the program you cheeky scrub. Lets try that again.\n"
+        removeCollection()
+        
+    csvreader = csv.reader(remCollectionsIn, dialect='excel-tab')
+    csvwriter = csv.writer(remCollectionsOut, dialect='excel-tab')
+    for row in csvreader:
+        if row[0] == deleteCollection:
+            located = True
+            continue
+        else:
+            csvwriter.writerow(row)
+            continue
+    
+    remCollectionsIn.close()
+    remCollectionsOut.close()
+    os.remove('Collections.csv')
+    os.rename('Collections-temp.csv', 'Collections.csv')
+    
+    if located == False:
+        removeChoice = raw_input('Failed to find the specified URL. Try Again? (Y:y/N:n): ')
+        if removeChoice == "Y" or removeChoice == "y":
+            removeCollection()
+        elif removeChoice == "N" or removeChoice == "n":
+            continueOrNot()
+        else:
+            continueOrNot()
+    elif located == True:
+        print "Completed.\n"
+        continueOrNot()
+    else:
+        sys.exit("I honestly have no idea how this would happen.")
 
 
 def addCollection():
     collectionURL = raw_input('Enter the URL for the new Collection: ')
     collectionGenre = raw_input('Enter the Genre for the new Collection: ')
     collectionDescription = raw_input('Enter the new Collection description: ')
+    collectionRanking = raw_input('Enter the global ranking number if you know it (optional): ')
+    
+    collectionURL = questionMark(collectionURL)
+    collectionGenre = questionMark(collectionGenre)
+    collectionDescription = questionMark(collectionDescription)
+    collectionRanking = questionMark(collectionRanking)
+    
     print "Appending to Collections..."
-    writer = csv.writer(f, delimiter='~')
-    writer.writerow((collectionURL, collectionGenre, collectionDescription))
+    with open('Collections.csv', 'ab') as collectionsFile:
+        writer = csv.writer(collectionsFile, dialect='excel-tab')
+        writer.writerow((collectionURL, collectionGenre, collectionDescription, collectionRanking))
     print "Completed."
     continueOrNot()
 
 
+def questionMark(collectionVariable):
+    if not collectionVariable:
+        collectionVariable = 'N/A'
+        return collectionVariable
+    else:
+        return collectionVariable
+
+
 def continueOrNot():
-    choice = raw_input("Would you like to make another new collection? (Y/N)")
+    choice = raw_input("Would you like to append or delete another collection? (Y:y/N:n): ")
     if choice == "Y" or choice == "y":
-        addCollection()
+        begin()
     elif choice == "N" or choice == "n":
         sys.exit("Completed.")
     else:
@@ -31,5 +85,21 @@ def continueOrNot():
         sys.exit("Completed.")
 
 
-addCollection()
-f.close()
+def begin():
+    print "1. Append a new Collection"
+    print "2. Remove an existing Collection"
+    print "3. Exit"
+    choice = raw_input("Please select what you would like to do: ")
+    if choice == "1":
+        addCollection()
+    elif choice == "2":
+        removeCollection()
+    elif choice == "3":
+        print "Exiting..."
+        sys.exit("Completed.")
+    else:
+        print "Ill take that as an exit..."
+        sys.exit("Completed.")
+
+
+begin()
