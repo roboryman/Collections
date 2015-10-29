@@ -76,7 +76,14 @@ def questionMark(collectionVariable):
             collectionVariable = 'N/A'
             return collectionVariable
         else:
-            return collectionVariable
+            with open('Collections.csv', 'rb') as collectionsFile:
+                reader = csv.reader(collectionsFile, dialect='excel-tab')
+                for row in reader:
+                    if row[0] != collectionURL:
+                        return collectionVariable
+                    else:
+                        print "That URL already has an entry. Try again.\n"
+                        addCollection()
 
 
 def continueOrNot():
