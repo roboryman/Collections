@@ -67,7 +67,7 @@ def addCollection():
 
 
 def settings():
-    print "Working on implementing PyYAML."
+    print "Working on implementing a config library such as CONFIGOBJ 5 or PyYAML."
     begin()
 
 
