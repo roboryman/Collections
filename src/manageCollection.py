@@ -66,6 +66,11 @@ def addCollection():
     continueOrNot()
 
 
+def settings():
+    print "Working on implementing PyYAML."
+    begin()
+
+
 def questionMark(collectionVariable):
     if not collectionURL:
         print "You must enter a URL.\n"
@@ -100,13 +105,16 @@ def continueOrNot():
 def begin():
     print "1. Append a new Collection"
     print "2. Remove an existing Collection"
-    print "3. Exit"
+    print "3. Settings"
+    print "4. Exit"
     choice = raw_input("Please select what you would like to do: ")
     if choice == "1":
         addCollection()
     elif choice == "2":
         removeCollection()
     elif choice == "3":
+        settings()
+    elif choice == "4":
         print "Exiting..."
         sys.exit("Completed.")
     else:
