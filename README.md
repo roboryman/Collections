@@ -17,7 +17,7 @@ As of right now, the system relies on a core CSV file (Collections.csv) to hold 
 - [x] Do not accept entries with an empty URL (re-ask?)
 - [ ] Domain checker: checks if a domain is active using URL data from Collections (optional, user can turn on/off)
 
-I am currently working on "Implement safeguard to prevent multiple entries of the same URL/ranking"
+I am currently working on "Domain checker"
 
 
 Feel free to commit some ideas if you want :-)
