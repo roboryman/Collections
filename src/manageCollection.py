@@ -50,16 +50,15 @@ def removeCollection():
 def addCollection():
     global collectionURL
     collectionURL = raw_input('Enter the URL for the new Collection: ')
-    collectionGenre = raw_input('Enter the Genre for the new Collection: ')
-    collectionDescription = raw_input('Enter the new Collection description: ')
-    collectionRanking = raw_input('Enter the global ranking number if you know it (optional): ')
-    
     collectionURL = questionMark(collectionURL)
+    collectionGenre = raw_input('Enter the Genre for the new Collection: ')
     collectionGenre = questionMark(collectionGenre)
+    collectionDescription = raw_input('Enter the new Collection description: ')
     collectionDescription = questionMark(collectionDescription)
+    collectionRanking = raw_input('Enter the global ranking number if you know it (optional): ')
     collectionRanking = questionMark(collectionRanking)
     
-    print "Appending to Collections..."
+    print "Appending to Collections...\n"
     with open('Collections.csv', 'ab') as collectionsFile:
         writer = csv.writer(collectionsFile, dialect='excel-tab')
         writer.writerow((collectionURL, collectionGenre, collectionDescription, collectionRanking))
@@ -80,10 +79,11 @@ def questionMark(collectionVariable):
                 reader = csv.reader(collectionsFile, dialect='excel-tab')
                 for row in reader:
                     if row[0] != collectionURL:
-                        return collectionVariable
+                        pass
                     else:
                         print "That URL already has an entry. Try again.\n"
                         addCollection()
+    return collectionVariable
 
 
 def continueOrNot():
