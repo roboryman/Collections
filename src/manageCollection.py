@@ -66,7 +66,7 @@ def addCollection():
     continueOrNot()
 
 
-def settings():
+def settingsAndOptions():
     print "Working on implementing a config library such as CONFIGOBJ 5 or PyYAML."
     begin()
 
@@ -105,7 +105,7 @@ def continueOrNot():
 def begin():
     print "1. Append a new Collection"
     print "2. Remove an existing Collection"
-    print "3. Settings"
+    print "3. Settings & Options"
     print "4. Exit"
     choice = raw_input("Please select what you would like to do: ")
     if choice == "1":
@@ -113,7 +113,7 @@ def begin():
     elif choice == "2":
         removeCollection()
     elif choice == "3":
-        settings()
+        settingsAndOptions()
     elif choice == "4":
         print "Exiting..."
         sys.exit("Completed.")
