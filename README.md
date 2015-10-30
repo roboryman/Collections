@@ -16,7 +16,7 @@ As of right now, the system relies on a core CSV file (Collections.csv) to hold 
 - [ ] Import from ranked lists (settings)
 - [ ] Live domain check (settings)
 - [ ] User doesn't have to install PrettyTables Library
-- [ ] Setup PyYAML for settings file
+- [ ] Setup CONFIGOBJ 5 for settings file
 
 I am currently working on "Setup PyYAML for settings file"
 
