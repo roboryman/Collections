@@ -1,6 +1,4 @@
-import csv
-import sys
-import os
+import csv, sys, os
 
 # Collections: Add/remove collections to Collections CSV
 
@@ -36,25 +34,24 @@ def removeCollection():
         removeChoice = raw_input('Failed to find the specified URL. Try Again? (Y:y/N:n): ')
         if removeChoice == "Y" or removeChoice == "y":
             removeCollection()
-        elif removeChoice == "N" or removeChoice == "n":
-            continueOrNot()
         else:
             continueOrNot()
     elif located == True:
         print "Completed.\n"
         continueOrNot()
-    else:
-        sys.exit("I honestly have no idea how this would happen.")
 
 
 def addCollection():
     global collectionURL
     collectionURL = raw_input('Enter the URL for the new Collection: ')
     collectionURL = questionMark(collectionURL)
+    
     collectionGenre = raw_input('Enter the Genre for the new Collection: ')
     collectionGenre = questionMark(collectionGenre)
+    
     collectionDescription = raw_input('Enter the new Collection description: ')
     collectionDescription = questionMark(collectionDescription)
+    
     collectionRanking = raw_input('Enter the global ranking number if you know it (optional): ')
     collectionRanking = questionMark(collectionRanking)
     
@@ -95,10 +92,7 @@ def continueOrNot():
     choice = raw_input("Would you like to append or delete another collection? (Y:y/N:n): ")
     if choice == "Y" or choice == "y":
         begin()
-    elif choice == "N" or choice == "n":
-        sys.exit("Completed.")
     else:
-        print "I'll take that as a no."
         sys.exit("Completed.")
 
 
@@ -114,12 +108,10 @@ def begin():
         removeCollection()
     elif choice == "3":
         settingsAndOptions()
-    elif choice == "4":
+    else:
         print "Exiting..."
         sys.exit("Completed.")
-    else:
-        print "Ill take that as an exit..."
-        sys.exit("Completed.")
+
 
 
 begin()
