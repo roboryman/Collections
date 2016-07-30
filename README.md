@@ -1,4 +1,4 @@
-# Collections [WIP]
+# Collections [ABANDONED]
 Collections is ultimately designed to allow users to manage a custom domain index (with additional information).
 
 As of right now, the system relies on a core CSV file (Collections.csv) to hold data. This may pose a problem; therefore everything is bound to be rewritten.
