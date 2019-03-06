@@ -1,4 +1,6 @@
 # Collections [ABANDONED]
+2019 Note: This is a very early experiment CSV experiment done some time ago when I first started learning Python. This small project is nowhere near optimized and secure and therefore is not production code.
+
 Collections is ultimately designed to allow users to manage a custom domain index (with additional information).
 
 As of right now, the system relies on a core CSV file (Collections.csv) to hold data. This may pose a problem; therefore everything is bound to be rewritten.
